@@ -1,0 +1,17 @@
+.container{
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #212d38;
+}
+span{
+    font-size: 25px;
+    color: #fff;
+}
+img{
+    height: 80px;
+    border-radius: 80px;
+}
