@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,7 @@ import { BoardComponent } from './board/board.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { UserLoggedInComponent } from './user-logged-in/user-logged-in.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { MainContainerComponent } from './main-container/main-container.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     BoardComponent,
     ProjectsComponent,
     UserLoggedInComponent,
-    TopBarComponent
+    TopBarComponent,
+    MainContainerComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
