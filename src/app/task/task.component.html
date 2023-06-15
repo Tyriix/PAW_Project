@@ -22,8 +22,8 @@
               <button (click)="deleteTask(task)">Delete</button>  
             </div>  
           </div>
-          <div *ngIf="task.state === TaskState.ToDo && task.editing">
-            <input type="text" [(ngModel)]="task.title" />
+          <div class="task" *ngIf="task.state === TaskState.ToDo && task.editing">
+            <input class="editing-task"  type="text" [(ngModel)]="task.title" />
             <button (click)="saveTask(task)">Save</button>
           </div>
         </li>
@@ -41,8 +41,8 @@
               <button (click)="deleteTask(task)">Delete</button>  
             </div> 
           </div>
-          <div *ngIf="task.state === TaskState.Doing && task.editing">
-            <input type="text" [(ngModel)]="task.title" />
+          <div class="task" *ngIf="task.state === TaskState.Doing && task.editing">
+            <input class="editing-task" type="text" [(ngModel)]="task.title" />
             <button (click)="saveTask(task)">Save</button>
           </div>
         </li>
@@ -60,8 +60,8 @@
               <button (click)="deleteTask(task)">Delete</button>  
             </div> 
           </div>
-          <div *ngIf="task.state === TaskState.Done && task.editing">
-            <input type="text" [(ngModel)]="task.title" />
+          <div class="task" *ngIf="task.state === TaskState.Done && task.editing">
+            <input class="editing-task" type="text" [(ngModel)]="task.title" />
             <button (click)="saveTask(task)">Save</button>
           </div>
         </li>

@@ -7,7 +7,7 @@
   margin-top: 20px;
   color: white;
   text-align: center;
-  .board-form{
+  .board-form {
     width: 100%;
     .input-form {
       font-family: "Roboto", sans-serif;
@@ -43,6 +43,8 @@
   .kanban-cards {
     display: flex;
     flex-direction: row;
+    width: 100%;
+    justify-content: center;
     .kanban-card {
       display: inline-block;
       width: 200px;
@@ -50,15 +52,16 @@
       background: #212121;
       border-radius: 20px;
       overflow-y: visible;
-      margin-top: 50px;
-      margin-right: 60px;
-      margin-bottom: 50px;
+      margin: 50px;
 
-      .task{
+      .task {
         display: flex;
         flex-direction: row;
         width: 200px;
         justify-content: space-between;
+      }
+      .editing-task {
+        max-width: 140px;
       }
       h3 {
         margin-bottom: 10px;
