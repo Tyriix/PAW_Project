@@ -1,0 +1,91 @@
+.kanban-board {
+  background-color: #212d38;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  color: white;
+  text-align: center;
+  .board-form{
+    width: 100%;
+    .input-form {
+      font-family: "Roboto", sans-serif;
+      outline: 0;
+      background: #f2f2f2;
+      width: 20%;
+      border: 0;
+      padding: 15px;
+      box-sizing: border-box;
+      font-size: 14px;
+      margin-right: 10px;
+    }
+    .create-button {
+      font-family: "Roboto", sans-serif;
+      text-transform: uppercase;
+      outline: 0;
+      background: #4caf50;
+      width: 10%;
+      border: 0;
+      padding: 15px;
+      color: #ffffff;
+      font-size: 14px;
+      -webkit-transition: all 0.3 ease;
+      transition: all 0.3 ease;
+      cursor: pointer;
+    }
+    .create-button:hover,
+    .create-button:active,
+    .create-button:focus {
+      background: #43a047;
+    }
+  }
+  .kanban-cards {
+    display: flex;
+    flex-direction: row;
+    .kanban-card {
+      display: inline-block;
+      width: 200px;
+      padding: 10px;
+      background: #212121;
+      border-radius: 20px;
+      overflow-y: visible;
+      margin-top: 50px;
+      margin-right: 60px;
+      margin-bottom: 50px;
+
+      .task{
+        display: flex;
+        flex-direction: row;
+        width: 200px;
+        justify-content: space-between;
+      }
+      h3 {
+        margin-bottom: 10px;
+        user-select: none;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+          height: 50px;
+          cursor: move;
+          div {
+            display: flex;
+            align-items: center;
+
+            button {
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

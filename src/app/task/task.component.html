@@ -1,0 +1,71 @@
+<div class="kanban-board" *ngIf="functionalities.length >0">
+  <div class="board-form" >
+    <h2>Kanban Board</h2>
+    <select [(ngModel)]="selectedFunctionality" class="input-form" *ngIf="functionalities.length > 0" >
+      <option *ngFor="let functionality of functionalities" [ngValue]="functionality" >
+        {{ functionality.name }}
+      </option>
+    </select>
+    <input class="input-form" type="text" [(ngModel)]="newTaskName" placeholder="Task Name" [disabled]="!selectedFunctionality"/>
+    <button class="create-button" (click)="createTask()">Create</button>
+  </div>
+  
+  <div class="kanban-cards">
+    <div class="kanban-card" (drop)="onDrop($event, TaskState.ToDo)" (dragover)="allowDrop($event)">
+      <h3>ToDo</h3>
+      <ul>
+        <li *ngFor="let task of selectedFunctionality?.tasks" (dragstart)="onDragStart($event, task)" draggable="true">
+          <div class="task" *ngIf="task.state === TaskState.ToDo && !task.editing">
+            <span>{{ task.title }}</span>
+            <div class="task-buttons">
+              <button (click)="editTask(task)">Edit</button>
+              <button (click)="deleteTask(task)">Delete</button>  
+            </div>  
+          </div>
+          <div *ngIf="task.state === TaskState.ToDo && task.editing">
+            <input type="text" [(ngModel)]="task.title" />
+            <button (click)="saveTask(task)">Save</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="kanban-card" (drop)="onDrop($event, TaskState.Doing)" (dragover)="allowDrop($event)">
+      <h3>Doing</h3>
+      <ul>
+        <li *ngFor="let task of selectedFunctionality?.tasks" (dragstart)="onDragStart($event, task)" draggable="true">
+          <div class="task" *ngIf="task.state === TaskState.Doing && !task.editing">
+            <span>{{ task.title }}</span>
+            <div class="task-buttons">
+              <button (click)="editTask(task)">Edit</button>
+              <button (click)="deleteTask(task)">Delete</button>  
+            </div> 
+          </div>
+          <div *ngIf="task.state === TaskState.Doing && task.editing">
+            <input type="text" [(ngModel)]="task.title" />
+            <button (click)="saveTask(task)">Save</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="kanban-card" (drop)="onDrop($event, TaskState.Done)" (dragover)="allowDrop($event)">
+      <h3>Done</h3>
+      <ul>
+        <li *ngFor="let task of selectedFunctionality?.tasks" (dragstart)="onDragStart($event, task)" draggable="true">
+          <div class="task" *ngIf="task.state === TaskState.Done && !task.editing">
+            <span>{{ task.title }}</span>
+            <div class="task-buttons">
+              <button (click)="editTask(task)">Edit</button>
+              <button (click)="deleteTask(task)">Delete</button>  
+            </div> 
+          </div>
+          <div *ngIf="task.state === TaskState.Done && task.editing">
+            <input type="text" [(ngModel)]="task.title" />
+            <button (click)="saveTask(task)">Save</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -9,8 +9,11 @@ import { FormsModule } from '@angular/forms';
 import { BoardComponent } from './board/board.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { UserLoggedInComponent } from './user-logged-in/user-logged-in.component';
-import { TopBarComponent } from './top-bar/top-bar.component';
+import { FunctionalityComponent } from './functionality/functionality.component';
+import { TaskComponent } from './task/task.component';
 import { MainContainerComponent } from './main-container/main-container.component';
+import { FunctionalityService } from './shared/functionality.service';
+import { FilterTasksByStatePipe } from './shared/filter-tasks.pipe';
 
 @NgModule({
   declarations: [
@@ -19,16 +22,18 @@ import { MainContainerComponent } from './main-container/main-container.componen
     BoardComponent,
     ProjectsComponent,
     UserLoggedInComponent,
-    TopBarComponent,
+    FunctionalityComponent,
+    TaskComponent,
     MainContainerComponent,
+    FilterTasksByStatePipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    DragDropModule
+    DragDropModule,
   ],
-  providers: [],
+  providers: [FunctionalityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

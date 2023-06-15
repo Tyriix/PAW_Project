@@ -1,0 +1,27 @@
+<div class="functionality-container">
+  <div class="container-row">
+    <h2>Add a new functionality</h2>
+    <div class="form">
+      <input
+      class="input-form"
+      type="text"
+      [(ngModel)]="newFunctionalityName"
+      placeholder="Functionality Name"
+    />
+    <button (click)="createFunctionality()">Create</button>
+    </div>
+  </div>
+    <div class="container-row" *ngIf="functionalities.length > 0">
+      <h2>Functionality List</h2>
+      <div class="form-list">
+        <ul>
+          <li *ngFor="let functionality of functionalities">
+            <input class="edit-input" type="text" [(ngModel)]="functionality.name" />
+            <button class="edit-button" (click)="updateFunctionalityName(functionality, functionality.name)">Update</button>
+            <button class="delete-button" (click)="deleteFunctionality(functionality)">Delete</button>
+          </li>
+        </ul>
+      </div>  
+    </div>
+</div>
+
