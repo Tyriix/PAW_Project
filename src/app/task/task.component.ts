@@ -31,7 +31,7 @@ export class TaskComponent implements OnInit {
         id: this.selectedFunctionality.tasks.length + 1,
         title: this.newTaskName,
         state: TaskState.ToDo,
-        editing: false, // Add the 'editing' property
+        editing: false,
       };
       this.selectedFunctionality.tasks.push(newTask);
       this.functionalityService.updateFunctionality(this.selectedFunctionality);
@@ -61,29 +61,24 @@ export class TaskComponent implements OnInit {
       }
     }
   }
-   // Event handler for drag start event
    onDragStart(event: DragEvent, task: Task) {
     this.draggedTask = task;
   }
 
-  // Event handler for drag end event
   onDragEnd(event: DragEvent) {
     this.draggedTask = null;
     this.targetCard = null;
   }
 
-  // Event handler for drag over event on the card
   onDragOver(event: DragEvent) {
     event.preventDefault();
   }
 
-  // Event handler for drag enter event on the card
   onDragEnter(event: DragEvent, card: HTMLElement) {
     event.preventDefault();
     this.targetCard = card;
   }
 
-  // Event handler for drag leave event on the card
   onDragLeave(event: DragEvent) {
     this.targetCard = null;
   }

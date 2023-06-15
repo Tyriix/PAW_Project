@@ -13,12 +13,10 @@ export class LoginComponent{
   password!: string;
 
   onLogin() {
-    // Simulate login functionality without a server
     if (this.username === 'Jan' && this.password === 'Niezbędny') {
       this.router.navigate(['/board']);
       console.log("Logged in")
     } else {
-      // Show an error message or perform any other desired action
       console.log("Not logged in")
     }
   }
